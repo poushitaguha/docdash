@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import Register from "./pages/register/register";
-import SignIn from "./pages/signin/signin";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from "react-router-dom";
+import "./register.css";
+import SignIn from "../signin/signin";
 
 class Register extends Component {
     constructor(props) {
@@ -75,14 +78,15 @@ class Register extends Component {
                                         >
                                             Register
                     </button>
-                                        <a class='d-block text-center mt-2 small' href='#'>
+                                        <Link class='d-block text-center mt-2 small' to={`/`}>
                                             Sign In
-                    </a>
+                                        </Link>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <Route exact path='/' component={SignIn} />
                 </div>
             </React.Fragment>
         );

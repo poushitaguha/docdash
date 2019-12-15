@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SignIn from "./pages/signin/signin";
+import Register from "./pages/register/register";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,9 +16,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-        <SignIn />
-      </div>
+      <Router>
+        <Route exact path='/' component={SignIn} />
+        <Route path='/register' component={Register} />
+      </Router >
     );
   }
 }
